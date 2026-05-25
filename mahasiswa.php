@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE php
+>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +13,19 @@
     <hr>
     <table border = "1" cellspacing = "0" cellpadding = "10px">
         <tr>
-            <td><a href = "index.html">home</a></td>
-            <td><a href = "profile.html">profile</a></td>
-            <td><a href = "contact.html">contact</a></td>
-            <td><a href = "mahasiswa.html">mahasiswa</a></td>
+            <td><a href = "index.php
+            ">home</a></td>
+            <td><a href = "profile.php
+            ">profile</a></td>
+            <td><a href = "contact.php
+            ">contact</a></td>
+            <td><a href = "mahasiswa.php
+            ">mahasiswa</a></td>
 
     </table>
     <h2>Data mahasiswa</h2>
-    <a href="inputdata.html">
+    <a href="inputdata.php
+    ">
         <button>Tambah Data</button>
     </a>
     <table border = "1" cellpadding = "5px">
@@ -74,4 +80,5 @@
 
     </table>
 </body>
-</html>
+</php
+>
