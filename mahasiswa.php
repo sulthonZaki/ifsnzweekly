@@ -1,3 +1,27 @@
+<?php
+
+    $koneksi = mysqli_connect("localhost", "root", "root", "ifsnzweekly");
+
+    // if ($koneksi)
+
+    //     {
+    //         echo "berhasil koneksi";
+    //     }
+
+    $query = "SELECT * FROM mahasiswa";
+    $result = mysqli_query($koneksi, $query);
+
+    // while ($mhs = mysqli_fetch_assoc($result))
+
+    // {
+    //     var_dump ($mhs);
+    // }
+
+
+?>
+
+
+
 <!DOCTYPE php
 >
 <html lang="en">
@@ -30,27 +54,38 @@
     </a>
     <table border = "1" cellpadding = "5px">
         <tr>
-            <th rowspan="2">No</th>
-            <th rowspan="2"> Nama</th>
-            <th rowspan="2">NIM</th>
-            <th rowspan="2">foto</th> 
-            <th colspan="3">nilai</th>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>jurusan</th> 
+            <th>Email</th>
+            <th>No. HP</th>
+            <th>Foto</th>
+           
         </tr>
         <tr>
-            
-            <th>UTS</th>
-            <th>UAS</th>
-            <th>Tugas</th>
         </tr>
+        <?php
+        $i = 1;
+            while($mhs = mysqli_fetch_assoc($result))
+            {
+        ?>
         <tr>
             <td align="center">1</td>
-            <td>sulthon</td>
-            <td>123456789</td>
-            <td><img src="assets/images/snake.jpg" alt="foto" width="100px" /></td>
-            <td align="center">80</td>
-            <td align="center">85</td>
-            <td align="center">75</td>
+            <td><?php echo $mhs["nama"] ?></td>
+            <td align= "center"><?php echo $mhs["nim"] ?></td>
+            <td align= "center"><?php echo $mhs["jurusan"] ?></td>
+            <td align= "center"><?php echo $mhs["email"] ?></td>
+            <td align= "center"><?php echo $mhs["no_hp"] ?></td>
+            <td align= "center"><img src ="assets/images/<?php echo $mhs ["foto"] ?> width="70px /></td>
+            <td><a href="editdata.php"><button>EDIT</button></a> | <a href="deletedata.php"><button>DELETE</button></a></td>
+            
         </tr>
+        <?php
+        $i++;
+
+        }
+        ?>
     </table>
     <br>
     <hr>
