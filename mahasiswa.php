@@ -1,22 +1,17 @@
 <?php
 
-    $koneksi = mysqli_connect("localhost", "root", "root", "ifsnzweekly");
 
-    // if ($koneksi)
+    require 'fungsi.php';
+    $qmahasiswa = "SELECT * FROM mahasiswa";
+    $mahasiswas = tampildata($qmahasiswa);
+    
+    
 
-    //     {
-    //         echo "berhasil koneksi";
-    //     }
+   
 
-    $query = "SELECT * FROM mahasiswa";
-    $result = mysqli_query($koneksi, $query);
+   
 
-    // while ($mhs = mysqli_fetch_assoc($result))
-
-    // {
-    //     var_dump ($mhs);
-    // }
-
+   
 
 ?>
 
@@ -67,17 +62,18 @@
         </tr>
         <?php
         $i = 1;
-            while($mhs = mysqli_fetch_assoc($result))
+           foreach($mahasiswas as $mhs)
+
             {
         ?>
         <tr>
-            <td align="center">1</td>
+            <td align="center"><?= $i ?></td>
             <td><?php echo $mhs["nama"] ?></td>
             <td align= "center"><?php echo $mhs["nim"] ?></td>
             <td align= "center"><?php echo $mhs["jurusan"] ?></td>
             <td align= "center"><?php echo $mhs["email"] ?></td>
             <td align= "center"><?php echo $mhs["no_hp"] ?></td>
-            <td align= "center"><img src ="assets/images/<?php echo $mhs ["foto"] ?> width="70px /></td>
+            <td align= "center"><img src ="assets/images/<?php echo $mhs ["foto"] ?> width="70px></td>
             <td><a href="editdata.php"><button>EDIT</button></a> | <a href="deletedata.php"><button>DELETE</button></a></td>
             
         </tr>
@@ -86,34 +82,7 @@
 
         }
         ?>
-    </table>
-    <br>
-    <hr>
-    <table border = "1" cellspacing = "0" cellpadding = "5px">
-        <tr>
-            <td>11</td>
-            <td>12</td>
-            <td>13</td>
-            <td>14</td>
-        </tr>
-        <tr>
-            <td>21</td>
-            <td colspan="2" rowspan="2" align="cente">?</td>
-            
-            <td>24</td>
-        </tr>
-        <tr>
-            <td>31</td>
-            
-            <td>34</td>
-        </tr>
-        <tr>
-            <td>41</td>
-            <td>42</td>
-            <td>43</td>
-            <td>44</td>
-
-    </table>
+    
 </body>
 </php
 >
