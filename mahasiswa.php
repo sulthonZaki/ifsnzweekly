@@ -56,6 +56,8 @@
             <th>Email</th>
             <th>No. HP</th>
             <th>Foto</th>
+            <th>aksi</th>
+
            
         </tr>
         <tr>
@@ -73,8 +75,8 @@
             <td align= "center"><?php echo $mhs["jurusan"] ?></td>
             <td align= "center"><?php echo $mhs["email"] ?></td>
             <td align= "center"><?php echo $mhs["no_hp"] ?></td>
-            <td align= "center"><img src ="assets/images/<?php echo $mhs ["foto"] ?> width="70px></td>
-            <td><a href="editdata.php"><button>EDIT</button></a> | <a href="deletedata.php"><button>DELETE</button></a></td>
+            <td align= "center"><img src ="assets/images/<?php echo $mhs ["foto"] ?>" width="70px"/></td>
+            <td><a href="editdata.php?id=<?= $mhs ["id"] ?>"><button>EDIT</button></a> | <a href="deletedata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('yakinn');"><button>DELETE</button></a></td>
             
         </tr>
         <?php
